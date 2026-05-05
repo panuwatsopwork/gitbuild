@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grit Build SEO Strategy 12 เดือน</title>
+  <meta name="description" content="สไลด์สรุปแผน SEO 12 เดือนของ Grit Build ครอบคลุม content roadmap, technical SEO, KPI และ deliverables ทั้งโปรเจกต์">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-sans: 'IBM Plex Sans Thai', sans-serif;
+      --color-bg: #f5f7fb;
+      --color-panel: #ffffff;
+      --color-background-secondary: #f4f6fa;
+      --color-background-tertiary: #e8edf5;
+      --color-border-tertiary: #d8e0eb;
+      --color-text-primary: #142033;
+      --color-text-secondary: #516078;
+      --color-text-tertiary: #7a879b;
+      --border-radius-md: 14px;
+      --border-radius-lg: 18px;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background:
+        radial-gradient(circle at top left, rgba(12, 68, 124, 0.08), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(99, 56, 6, 0.08), transparent 22%),
+        var(--color-bg);
+      color: var(--color-text-primary);
+      padding: 28px 18px 36px;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0c447c 0%, #0d5a9d 55%, #2c79b7 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 34px 30px;
+      box-shadow: 0 24px 70px rgba(12, 68, 124, 0.24);
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -70px;
+      top: -80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.18), transparent 68%);
+    }
+
+    .hero-kicker {
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      opacity: .82;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: rgba(255,255,255,.88);
+      font-size: 15px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .slides { display: flex; flex-direction: column; gap: 1.25rem; }
+    .slide {
+      border: 1px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      background: var(--color-panel);
+      box-shadow: var(--shadow);
+    }
+    .slide-header {
+      padding: 12px 18px;
+      background: var(--color-background-secondary);
+      border-bottom: 1px solid var(--color-border-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .slide-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-text-tertiary);
+      background: var(--color-background-tertiary);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+    .slide-title { font-size: 13px; font-weight: 600; color: var(--color-text-secondary); }
+    .slide-body { padding: 20px; }
+
+    .big-title { font-size: 24px; font-weight: 600; color: var(--color-text-primary); line-height: 1.3; margin-bottom: 6px; }
+    .sub-title { font-size: 14px; color: var(--color-text-secondary); }
+    .tag { display: inline-block; font-size: 11px; padding: 4px 10px; border-radius: 99px; margin-right: 6px; margin-top: 8px; font-weight: 600; }
+    .tag-blue { background: #E6F1FB; color: #0C447C; }
+    .tag-teal { background: #E1F5EE; color: #085041; }
+    .tag-amber { background: #FAEEDA; color: #633806; }
+    .tag-coral { background: #FAECE7; color: #4A1B0C; }
+
+    .metrics-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 4px; }
+    .metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 14px; }
+    .metric-val { font-size: 24px; font-weight: 600; color: var(--color-text-primary); line-height: 1.1; }
+    .metric-label { font-size: 12px; color: var(--color-text-secondary); margin-top: 3px; line-height: 1.4; }
+
+    .phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 4px; }
+    .phase-card { border-radius: var(--border-radius-md); padding: 12px; border: 1px solid var(--color-border-tertiary); }
+    .phase-card h4 { font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+    .phase-card p { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+    .phase-1 { background: #E6F1FB; border-color: #B5D4F4; }
+    .phase-1 h4 { color: #0C447C; }
+    .phase-2 { background: #E1F5EE; border-color: #9FE1CB; }
+    .phase-2 h4 { color: #085041; }
+    .phase-3 { background: #FAEEDA; border-color: #FAC775; }
+    .phase-3 h4 { color: #633806; }
+    .phase-4 { background: #FAECE7; border-color: #F5C4B3; }
+    .phase-4 h4 { color: #4A1B0C; }
+
+    .content-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+    .content-table th { text-align: left; padding: 8px 10px; background: var(--color-background-secondary); color: var(--color-text-secondary); font-weight: 600; border-bottom: 1px solid var(--color-border-tertiary); }
+    .content-table td { padding: 8px 10px; border-bottom: 1px solid var(--color-border-tertiary); vertical-align: top; color: var(--color-text-primary); }
+    .content-table tr:last-child td { border-bottom: none; }
+    .content-table .total td { font-weight: 600; background: var(--color-background-secondary); }
+
+    .badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 600; white-space: nowrap; }
+    .b-new { background: #E1F5EE; color: #085041; }
+    .b-opt { background: #FAEEDA; color: #633806; }
+    .b-tech { background: #E6F1FB; color: #0C447C; }
+    .b-p1 { background: #FCEBEB; color: #791F1F; }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 4px; }
+    .kpi-card { border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 12px; }
+    .kpi-phase { font-size: 10px; font-weight: 600; color: var(--color-text-tertiary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .kpi-item { font-size: 12px; color: var(--color-text-primary); padding: 2px 0; line-height: 1.4; }
+    .kpi-item::before { content: "→ "; color: var(--color-text-tertiary); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 4px; }
+    .col-block h4 { font-size: 12px; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid var(--color-border-tertiary); }
+    .col-block ul { list-style: none; padding: 0; }
+    .col-block li { font-size: 12px; color: var(--color-text-primary); padding: 4px 0; border-bottom: 1px solid var(--color-border-tertiary); line-height: 1.4; }
+    .col-block li:last-child { border-bottom: none; }
+    .col-block li span { font-size: 11px; color: var(--color-text-secondary); }
+
+    .month-strip { display: flex; gap: 4px; margin-top: 8px; flex-wrap: wrap; }
+    .month-box { border-radius: 8px; padding: 8px 10px; min-width: 70px; flex: 1; }
+    .month-box .mnum { font-size: 10px; font-weight: 600; margin-bottom: 2px; }
+    .month-box .mtitle { font-size: 10px; font-weight: 600; line-height: 1.3; }
+    .month-box .mcount { font-size: 18px; font-weight: 600; margin-top: 4px; }
+    .month-box .munit { font-size: 9px; }
+    .mb1 { background: #E6F1FB; color: #0C447C; }
+    .mb2 { background: #D6EEF8; color: #0C447C; }
+    .mb3 { background: #C7E7F5; color: #0C447C; }
+    .mb4 { background: #E1F5EE; color: #085041; }
+    .mb5 { background: #D4F1E6; color: #085041; }
+    .mb6 { background: #C5ECDB; color: #085041; }
+    .mb7 { background: #FAEEDA; color: #633806; }
+    .mb8 { background: #F5E3C2; color: #633806; }
+    .mb9 { background: #EFDA9D; color: #633806; }
+    .mb10 { background: #FAECE7; color: #4A1B0C; }
+    .mb11 { background: #F5D9CE; color: #4A1B0C; }
+    .mb12 { background: #F0C5B5; color: #4A1B0C; }
+
+    .note { font-size: 11px; color: var(--color-text-secondary); margin-top: 10px; line-height: 1.5; padding: 10px 12px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); }
+    .note strong { color: var(--color-text-primary); }
+
+    @media (max-width: 860px) {
+      body { padding: 16px 12px 28px; }
+      .hero { padding: 24px 18px; border-radius: 18px; }
+      .slide-body { padding: 16px; }
+      .two-col { grid-template-columns: 1fr; }
+      .content-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-kicker">SEO Strategy · 12-Month Roadmap</div>
+      <h1>Grit Build SEO Strategy</h1>
+      <p>สรุปแผน 12 เดือนเพื่อขยาย Organic Visibility, สร้าง Lead ที่มีคุณภาพ และดันคีย์เวิร์ดกลุ่ม “รับสร้างบ้าน” สู่หน้าแรก โดยใช้ทั้ง Content, Technical SEO, Local SEO และ Link Building อย่างเป็นระบบ</p>
+    </section>
+
+    <h2 class="sr-only">เนื้อหาสไลด์นำเสนอ Grit Build SEO Strategy 12 เดือน</h2>
+
+    <div class="slides">
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 1</span>
+          <span class="slide-title">Cover / ปกนำเสนอ</span>
+        </div>
+        <div class="slide-body">
+          <p class="big-title">Grit Build SEO Strategy<br>แผน 12 เดือน สู่อันดับ 1</p>
+          <p class="sub-title" style="margin-top:8px">บริการ SEO แบบครบวงจร — Content Creation · Technical SEO · Link Building · Conversion Optimization</p>
+          <div style="margin-top:12px">
+            <span class="tag tag-blue">12 เดือน</span>
+            <span class="tag tag-teal">4 Phase</span>
+            <span class="tag tag-amber">43 New Content</span>
+            <span class="tag tag-coral">47 Optimized</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 2</span>
+          <span class="slide-title">ภาพรวมตัวเลข — สิ่งที่คุณได้รับตลอด 12 เดือน</span>
+        </div>
+        <div class="slide-body">
+          <div class="metrics-row">
+            <div class="metric">
+              <div class="metric-val">43</div>
+              <div class="metric-label">New Content ชิ้นใหม่ทั้งหมด</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">47</div>
+              <div class="metric-label">บทความเก่าที่ Optimize / Refresh</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">90</div>
+              <div class="metric-label">Content Actions ตลอดโปรเจค</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">~7.5</div>
+              <div class="metric-label">เฉลี่ยต่อเดือน (new + optimize)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">Top 10</div>
+              <div class="metric-label">เป้าหมาย “รับสร้างบ้าน” เดือน 12</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 3</span>
+          <span class="slide-title">ปัญหาและโอกาส — ทำไมต้องทำ SEO ตอนนี้</span>
+        </div>
+        <div class="slide-body">
+          <div class="two-col">
+            <div class="col-block">
+              <h4>ปัญหาที่พบในเว็บปัจจุบัน</h4>
+              <ul>
+                <li>ยังไม่ติด Top 100 keyword หลัก “รับสร้างบ้าน”</li>
+                <li>บทความ 64 ชิ้น แต่มี Commercial Page เพียง 1 ชิ้น (1.6%)</li>
+                <li>ไม่มี Service Landing Page ที่ target keyword ชัดเจน</li>
+                <li>ขาด Local SEO Pages (กรุงเทพ, นนทบุรี ฯลฯ)</li>
+                <li>Internal Link ทั้ง 64 บทความ ไม่ชี้กลับ Service Page</li>
+                <li>ขาด Pricing Page / Comparison Page</li>
+                <li>2 หน้า “ขั้นตอนสร้างบ้าน” ซ้ำกัน — Duplicate Content</li>
+              </ul>
+            </div>
+            <div class="col-block">
+              <h4>โอกาสที่รอเก็บอยู่</h4>
+              <ul>
+                <li>“รับสร้างบ้าน” — Volume 5,000/เดือน, KD 36 <span>(ยังพอสู้ได้)</span></li>
+                <li>“แบบบ้าน 2 ชั้น” — Volume 7,400+/เดือน, KD 2 <span>(ง่ายมาก)</span></li>
+                <li>“รับสร้างบ้านกรุงเทพ” — Volume 200/เดือน, KD 3 <span>(Local, ชนะง่าย)</span></li>
+                <li>“บ้าน 5-10 ล้าน” — Volume 700-1,200/เดือน, KD 0 <span>(Lead คุณภาพ)</span></li>
+                <li>“แบบบ้านหรู” — Volume 700/เดือน, KD 4 <span>(ตรง Segment)</span></li>
+                <li>คู่แข่ง BTB อยู่อันดับ 3 — วิเคราะห์กลยุทธ์ได้แล้ว copy แนวทาง</li>
+                <li>64 บทความเดิม = Asset มีอยู่แล้ว แค่ Optimize = ประหยัดงบ</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 4</span>
+          <span class="slide-title">กลยุทธ์ 4 Phase — ภาพรวมแผนงาน 12 เดือน</span>
+        </div>
+        <div class="slide-body">
+          <div class="phase-grid">
+            <div class="phase-card phase-1">
+              <h4>Phase 1 · เดือน 1–3</h4>
+              <p><strong>Foundation</strong><br>สร้างฐานรากเว็บ — Money Pages, Pillar, Local, Pricing</p>
+              <p style="margin-top:6px; font-size:11px; font-weight:600">Content: 9 ชิ้นใหม่ + Optimize 17</p>
+            </div>
+            <div class="phase-card phase-2">
+              <h4>Phase 2 · เดือน 4–6</h4>
+              <p><strong>Content Scale</strong><br>สร้าง Traffic จาก Inspiration, Style, FAQ, Comparison</p>
+              <p style="margin-top:6px; font-size:11px; font-weight:600">Content: 17 ชิ้นใหม่ + Optimize 20</p>
+            </div>
+            <div class="phase-card phase-3">
+              <h4>Phase 3 · เดือน 7–9</h4>
+              <p><strong>Authority & Local</strong><br>ขยาย Local SEO + Link Building + Video + Technical</p>
+              <p style="margin-top:6px; font-size:11px; font-weight:600">Content: 13 ชิ้นใหม่ + Technical</p>
+            </div>
+            <div class="phase-card phase-4">
+              <h4>Phase 4 · เดือน 10–12</h4>
+              <p><strong>Optimize & Scale</strong><br>CRO, Refresh, Seasonal, Annual Review</p>
+              <p style="margin-top:6px; font-size:11px; font-weight:600">Content: 4 ชิ้นใหม่ + Refresh 10</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 5</span>
+          <span class="slide-title">แผน Content รายเดือน — จำนวนที่จับต้องได้</span>
+        </div>
+        <div class="slide-body">
+          <div class="month-strip">
+            <div class="month-box mb1"><div class="mnum">เดือน 1</div><div class="mtitle">Home + Service</div><div class="mcount">2</div><div class="munit">New Pages</div></div>
+            <div class="month-box mb2"><div class="mnum">เดือน 2</div><div class="mtitle">Pillar + Local</div><div class="mcount">3</div><div class="munit">New Pages</div></div>
+            <div class="month-box mb3"><div class="mnum">เดือน 3</div><div class="mtitle">Pricing + Opt</div><div class="mcount">4 + 17</div><div class="munit">New + Optimize</div></div>
+            <div class="month-box mb4"><div class="mnum">เดือน 4</div><div class="mtitle">Pillar + Comparison</div><div class="mcount">5</div><div class="munit">New Articles</div></div>
+            <div class="month-box mb5"><div class="mnum">เดือน 5</div><div class="mtitle">Style + FAQ</div><div class="mcount">9</div><div class="munit">New Articles</div></div>
+            <div class="month-box mb6"><div class="mnum">เดือน 6</div><div class="mtitle">Optimize P2</div><div class="mcount">3 + 20</div><div class="munit">New + Optimize</div></div>
+            <div class="month-box mb7"><div class="mnum">เดือน 7</div><div class="mtitle">Local Expansion</div><div class="mcount">5</div><div class="munit">Local Pages</div></div>
+            <div class="month-box mb8"><div class="mnum">เดือน 8</div><div class="mtitle">Technical + Links</div><div class="mcount">5</div><div class="munit">Backlinks + Tech</div></div>
+            <div class="month-box mb9"><div class="mnum">เดือน 9</div><div class="mtitle">E-E-A-T + Video</div><div class="mcount">7</div><div class="munit">Pages + Videos</div></div>
+            <div class="month-box mb10"><div class="mnum">เดือน 10</div><div class="mtitle">Refresh + CRO</div><div class="mcount">10</div><div class="munit">Content Refresh</div></div>
+            <div class="month-box mb11"><div class="mnum">เดือน 11</div><div class="mtitle">Seasonal + Links</div><div class="mcount">4</div><div class="munit">New Articles</div></div>
+            <div class="month-box mb12"><div class="mnum">เดือน 12</div><div class="mtitle">Review + Plan</div><div class="mcount">Annual</div><div class="munit">Report + Y2 Plan</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 6</span>
+          <span class="slide-title">New Content 43 ชิ้น — แบ่งตามประเภท</span>
+        </div>
+        <div class="slide-body">
+          <table class="content-table">
+            <thead>
+              <tr><th>ประเภทหน้า</th><th>จำนวน</th><th>ตัวอย่าง</th><th>Phase</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="badge b-new">Service / Money Page</span></td><td style="font-weight:600">5 ชิ้น</td><td>Service Landing, Pricing Page, รับออกแบบบ้าน, Local BKK, Modern Builder</td><td>Phase 1</td></tr>
+              <tr><td><span class="badge b-new">Pillar Page</span></td><td style="font-weight:600">5 ชิ้น</td><td>เลือกบริษัทรับสร้างบ้าน, แบบบ้าน 2 ชั้น, แบบบ้านชั้นเดียว, ขั้นตอนสร้างบ้าน, สร้างบ้านงบไม่บาน</td><td>Phase 1–2</td></tr>
+              <tr><td><span class="badge b-new">Pricing Cluster</span></td><td style="font-weight:600">3 ชิ้น</td><td>บ้าน 2 ล้าน, บ้าน 5 ล้าน, บ้าน 10 ล้าน</td><td>Phase 1</td></tr>
+              <tr><td><span class="badge b-new">Local SEO Page</span></td><td style="font-weight:600">5 ชิ้น</td><td>รับสร้างบ้านกรุงเทพ, นนทบุรี/ปทุม, ชลบุรี/ระยอง, สมุทรปราการ, นครปฐม</td><td>Phase 1, 3</td></tr>
+              <tr><td><span class="badge b-new">Comparison Article</span></td><td style="font-weight:600">4 ชิ้น</td><td>บริษัท vs ผู้รับเหมา, สร้าง vs ซื้อ, โครงสร้างเหล็ก vs คอนกรีต, ราคาถูก vs คุ้มค่า</td><td>Phase 2</td></tr>
+              <tr><td><span class="badge b-new">Style / Inspiration</span></td><td style="font-weight:600">6 ชิ้น</td><td>บ้านโมเดิร์น, บ้านหรู Luxury, บ้าน 4 ห้องนอน, บ้านหน้าแคบ, 5 สไตล์ 2026, Catalog Hub</td><td>Phase 2</td></tr>
+              <tr><td><span class="badge b-new">FAQ / How-to</span></td><td style="font-weight:600">5 ชิ้น</td><td>ตอบ 20+ คำถาม People Also Ask ที่มี Search Volume สูง</td><td>Phase 2</td></tr>
+              <tr><td><span class="badge b-tech">E-E-A-T + Authority</span></td><td style="font-weight:600">3 ชิ้น</td><td>About Our Engineers, Portfolio Projects, HBA Certification Page</td><td>Phase 3</td></tr>
+              <tr><td><span class="badge b-tech">Video Content</span></td><td style="font-weight:600">4 คลิป</td><td>YouTube: Tour บ้านสร้างจริง 4 หลัง + Embed ในบทความ</td><td>Phase 3</td></tr>
+              <tr><td><span class="badge b-new">Seasonal / Trending</span></td><td style="font-weight:600">3 ชิ้น</td><td>สร้างบ้านหน้าแล้ง, งบ X ล้านปี 2026, Viral Infographic</td><td>Phase 4</td></tr>
+              <tr class="total"><td>รวม New Content</td><td>43 ชิ้น</td><td colspan="2">เฉลี่ย 3.6 ชิ้น/เดือน (เฉพาะ New)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 7</span>
+          <span class="slide-title">Optimize Content 47 ชิ้น — สิ่งที่มีอยู่แล้วแต่ยังไม่ได้ใช้ประโยชน์เต็มที่</span>
+        </div>
+        <div class="slide-body">
+          <table class="content-table">
+            <thead>
+              <tr><th>Batch</th><th>จำนวน</th><th>สิ่งที่ทำ</th><th>Phase</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="badge b-p1">P1 Priority</span> Optimize</td><td style="font-weight:600">17 บทความ</td><td>เพิ่ม Internal Link 50+ จุดกลับ Service Page, เปลี่ยน Anchor Text, เพิ่ม CTA Box “ปรึกษาฟรี”</td><td>Phase 1 (เดือน 3)</td></tr>
+              <tr><td><span class="badge b-opt">P2 Priority</span> Optimize</td><td style="font-weight:600">20 บทความ</td><td>Optimize Title/H1/Meta, เพิ่ม CTA ในทุกบทความ Top Traffic, ปรับ Internal Link Structure</td><td>Phase 2 (เดือน 6)</td></tr>
+              <tr><td><span class="badge b-tech">Content Refresh</span></td><td style="font-weight:600">10 บทความ</td><td>อัปเดตข้อมูลให้เป็น 2025-2026, เพิ่มหัวข้อใหม่, เพิ่ม Internal Links รอบที่ 2</td><td>Phase 4 (เดือน 10)</td></tr>
+              <tr class="total"><td>รวม Optimize</td><td>47 ชิ้น</td><td colspan="2">≈ 16 Content Units เทียบเท่า (47 ÷ 3) | ประหยัดกว่าสร้างใหม่ทั้งหมด 65%+</td></tr>
+            </tbody>
+          </table>
+          <p class="note" style="margin-top:12px"><strong>ทำไม Optimize ถึงมีค่า?</strong> บทความที่มีอยู่แล้วมี Trust จาก Google อยู่บ้างแล้ว การ Optimize ใช้เวลา 20-30% ของการสร้างใหม่ แต่ให้ผลเร็วกว่า เพราะ Google รู้จัก URL นั้นอยู่แล้ว — เหมาะมากกับโปรเจคที่มีบทความสะสม 64 ชิ้น</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 8</span>
+          <span class="slide-title">งานที่ไม่ใช่ Content แต่สำคัญไม่แพ้กัน</span>
+        </div>
+        <div class="slide-body">
+          <div class="two-col">
+            <div class="col-block">
+              <h4>Technical SEO</h4>
+              <ul>
+                <li>Schema Markup: LocalBusiness, Service, HowTo, FAQ, VideoObject<br><span>เพิ่มโอกาสติด Featured Snippet + AI Overview</span></li>
+                <li>Core Web Vitals: LCP &lt;2.5s, Mobile Speed ≥70<br><span>Phase 3 เดือน 8</span></li>
+                <li>Fix Broken Links + Duplicate Content (2 หน้าซ้ำ)<br><span>Phase 1 เดือน 1</span></li>
+                <li>Sitemap + Robots.txt + Crawl Budget Optimization</li>
+                <li>URL Redirect: เปลี่ยน URL ที่เป็น Encoded Thai → อังกฤษ</li>
+              </ul>
+            </div>
+            <div class="col-block">
+              <h4>Link Building (2 Rounds)</h4>
+              <ul>
+                <li>Round 1: Guest Post 5 ชิ้น ใน Home/Real Estate Blogs DA≥30<br><span>Phase 3 เดือน 8</span></li>
+                <li>Round 2: PR Outreach 10 สื่อ (Sanook บ้าน, Houzz TH, ชีวจิต)<br><span>Phase 4 เดือน 11</span></li>
+                <li>Infographic: 1 ชิ้น Shareable เพื่อ Natural Link<br><span>เดือน 11</span></li>
+                <li>Google Business Profile: Weekly Posts + Q&A + Reviews<br><span>Phase 3 ตลอด</span></li>
+                <li>เป้าหมาย Domain Rating: จาก ~10 → ≥25</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 9</span>
+          <span class="slide-title">KPI และผลลัพธ์ที่คาดหวัง — วัดได้ทุกเดือน</span>
+        </div>
+        <div class="slide-body">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-phase" style="color:#0C447C">Phase 1 · เดือน 1–3</div>
+              <div class="kpi-item">“รับสร้างบ้าน” เข้า Top 50–100</div>
+              <div class="kpi-item">“รับสร้างบ้านกรุงเทพ” Top 20</div>
+              <div class="kpi-item">CTR หน้า Service +30%</div>
+              <div class="kpi-item">Internal PageRank flow ไป Money Pages</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-phase" style="color:#085041">Phase 2 · เดือน 4–6</div>
+              <div class="kpi-item">“แบบบ้าน 2 ชั้น” Top 10</div>
+              <div class="kpi-item">Organic Traffic +50% vs เดือน 1</div>
+              <div class="kpi-item">Lead จากเว็บ ≥ 30 ราย/เดือน</div>
+              <div class="kpi-item">Featured Snippet 3+ keyword</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-phase" style="color:#633806">Phase 3 · เดือน 7–9</div>
+              <div class="kpi-item">Local Pack ≥ 3 จังหวัด</div>
+              <div class="kpi-item">Domain Rating ≥ 18</div>
+              <div class="kpi-item">PageSpeed Mobile ≥ 70</div>
+              <div class="kpi-item">YouTube: Views + Time on Page +30%</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-phase" style="color:#4A1B0C">Phase 4 · เดือน 10–12</div>
+              <div class="kpi-item">“รับสร้างบ้าน” Top 10 (เป้าหมายหลัก)</div>
+              <div class="kpi-item">Lead ≥ 50 ราย/เดือน</div>
+              <div class="kpi-item">Domain Rating ≥ 25</div>
+              <div class="kpi-item">Conversion Rate บทความ → Lead +20%</div>
+            </div>
+          </div>
+          <p class="note" style="margin-top:12px"><strong>วัดผลรายเดือนผ่าน:</strong> Google Search Console (Position + CTR) · Google Analytics 4 (Traffic + Leads) · Ahrefs (Domain Rating + Keyword Rank) · Monthly Report ส่งให้ทุกสิ้นเดือน</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-header">
+          <span class="slide-num">Slide 10</span>
+          <span class="slide-title">สรุป Deliverables ทั้งโปรเจค — สิ่งที่ได้รับตลอด 12 เดือน</span>
+        </div>
+        <div class="slide-body">
+          <table class="content-table">
+            <thead>
+              <tr><th>หมวดงาน</th><th>จำนวน</th><th>รายละเอียด</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>New Content ชิ้นใหม่</td><td style="font-weight:600; color:#085041">43 ชิ้น</td><td>Service Pages (5), Pillar Pages (5), Pricing (3), Local SEO (5), Comparison (4), Style/FAQ (11), E-E-A-T (3), Video (4), Seasonal (3)</td></tr>
+              <tr><td>Optimize Content เก่า</td><td style="font-weight:600; color:#633806">47 ชิ้น</td><td>P1 (17) + P2 (20) + Refresh (10) — จากบทความที่มีอยู่แล้ว 64 ชิ้น</td></tr>
+              <tr><td>Technical SEO</td><td style="font-weight:600; color:#0C447C">1 รอบเต็ม</td><td>Schema, Core Web Vitals, Fix Broken Links, Duplicate Content, URL Cleanup, Sitemap</td></tr>
+              <tr><td>Link Building</td><td style="font-weight:600; color:#4A1B0C">15+ Links</td><td>Guest Post 5 + PR Outreach 10 + Infographic 1</td></tr>
+              <tr><td>Monthly Report</td><td style="font-weight:600">12 Reports</td><td>GSC + GA4 + Ahrefs สรุปผลรายเดือน พร้อม Action Next Month</td></tr>
+              <tr class="total"><td>รวมทั้งหมด</td><td>90 Actions</td><td>เฉลี่ย 7.5 Actions/เดือน | Content Units เทียบเท่า ~59 units ≈ 5/เดือน</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
