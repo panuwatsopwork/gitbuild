@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grit Build — Business One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a1a;
+  --paper:#fbf8f1;
+  --cream:#f5f1e8;
+  --soft:#eae5d8;
+  --navy:#1f3a5f;
+  --navy-deep:#142540;
+  --gold:#c8a04e;
+  --gold-light:#dec07a;
+  --gold-soft:#f0e3c2;
+  --rust:#a04f2f;
+  --moss:#5b8a47;
+  --slate:#4a5568;
+  --mute:#7a7268;
+  --line:rgba(31,58,95,.15);
+  --line-strong:rgba(31,58,95,.35);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+  background:#e9e2d2;
+  font-family:'Noto Sans Thai',sans-serif;
+  color:var(--ink);
+  line-height:1.55;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+
+body{
+  padding:40px 20px;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(200,160,78,.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(31,58,95,.06) 0%, transparent 50%);
+}
+
+.page{
+  max-width:1180px;
+  margin:0 auto;
+  background:var(--paper);
+  position:relative;
+  box-shadow:
+    0 1px 2px rgba(20,37,64,.08),
+    0 8px 40px rgba(20,37,64,.18),
+    0 30px 80px rgba(20,37,64,.12);
+  overflow:hidden;
+}
+
+/* ---------- HEADER ---------- */
+.hero{
+  position:relative;
+  padding:54px 60px 44px;
+  background:
+    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #2a4d76 100%);
+  color:#f5f1e8;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 40px,
+      rgba(200,160,78,.04) 40px,
+      rgba(200,160,78,.04) 80px
+    );
+  pointer-events:none;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  top:-100px;
+  right:-100px;
+  width:380px;
+  height:380px;
+  border:1px solid rgba(200,160,78,.2);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:11px;
+  letter-spacing:.32em;
+  font-weight:500;
+  color:var(--gold-light);
+  text-transform:uppercase;
+  margin-bottom:22px;
+  position:relative;
+  z-index:2;
+}
+
+.hero-tag::before{
+  content:'';
+  width:36px;
+  height:1px;
+  background:var(--gold);
+}
+
+.hero h1{
+  font-family:'Kanit',sans-serif;
+  font-size:78px;
+  font-weight:600;
+  line-height:.95;
+  letter-spacing:-.02em;
+  margin-bottom:8px;
+  position:relative;
+  z-index:2;
+}
+
+.hero h1 .accent{
+  color:var(--gold-light);
+  font-style:italic;
+  font-weight:400;
+}
+
+.hero-sub{
+  font-size:17px;
+  font-weight:300;
+  color:rgba(245,241,232,.85);
+  max-width:680px;
+  margin-top:12px;
+  position:relative;
+  z-index:2;
+}
+
+.hero-meta{
+  display:flex;
+  gap:36px;
+  margin-top:36px;
+  padding-top:24px;
+  border-top:1px solid rgba(200,160,78,.25);
+  position:relative;
+  z-index:2;
+}
+
+.hero-meta .item{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.hero-meta .label{
+  font-size:10px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--gold-light);
+  font-weight:500;
+}
+
+.hero-meta .value{
+  font-size:15px;
+  font-weight:500;
+  color:#fff;
+}
+
+/* ---------- SECTION COMMON ---------- */
+.section{
+  padding:48px 60px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  gap:20px;
+  margin-bottom:32px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--line);
+}
+
+.section-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:64px;
+  font-style:italic;
+  font-weight:400;
+  line-height:.8;
+  color:var(--gold);
+  letter-spacing:-.02em;
+}
+
+.section-title-wrap{flex:1;padding-bottom:8px}
+
+.section-kicker{
+  font-size:10px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:500;
+  margin-bottom:6px;
+}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;
+  font-weight:600;
+  color:var(--navy);
+  line-height:1.1;
+  letter-spacing:-.01em;
+}
+
+/* ---------- SECTION 1 — IDENTITY ---------- */
+.identity-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.identity-block{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.kv{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:14px 0;
+  border-bottom:1px dashed var(--line);
+}
+
+.kv:last-child{border-bottom:none}
+
+.kv-icon{
+  width:38px;
+  height:38px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--gold-soft);
+  border-radius:50%;
+  color:var(--navy);
+}
+
+.kv-icon svg{width:18px;height:18px}
+
+.kv-content{flex:1}
+.kv-label{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:500;
+  margin-bottom:4px;
+}
+.kv-value{
+  font-size:15px;
+  color:var(--ink);
+  font-weight:500;
+}
+.kv-value strong{color:var(--navy);font-weight:600}
+
+/* ---------- SECTION — SERVICES ---------- */
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+.service{
+  padding:28px 24px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  background:#fff;
+  transition:background .25s ease;
+}
+
+.service:nth-child(3n){border-right:none}
+.service:nth-last-child(-n+3){border-bottom:none}
+
+.service-step{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  font-style:italic;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:10px;
+  font-weight:400;
+}
+
+.service-title{
+  font-size:16px;
+  font-weight:600;
+  color:var(--navy);
+  margin-bottom:8px;
+  letter-spacing:.01em;
+}
+
+.service-desc{
+  font-size:13.5px;
+  color:var(--slate);
+  line-height:1.6;
+}
+
+/* ---------- SECTION — PRICING ---------- */
+.pricing{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:32px;
+}
+
+.price-card{
+  padding:32px 28px;
+  background:var(--cream);
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+
+.price-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:4px;height:100%;
+  background:var(--gold);
+}
+
+.price-region{
+  font-size:11px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:500;
+  margin-bottom:10px;
+}
+
+.price-amount{
+  font-family:'Cormorant Garamond',serif;
+  font-size:54px;
+  font-weight:600;
+  color:var(--navy);
+  line-height:1;
+  letter-spacing:-.02em;
+}
+
+.price-amount .unit{
+  font-size:20px;
+  color:var(--gold);
+  font-style:italic;
+  font-weight:400;
+  margin-left:8px;
+}
+
+.price-note{
+  font-size:13px;
+  color:var(--slate);
+  margin-top:10px;
+}
+
+/* spec ladder */
+.spec-ladder{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid var(--line);
+}
+
+.spec{
+  padding:24px 22px;
+  border-right:1px solid var(--line);
+  background:#fff;
+  position:relative;
+}
+
+.spec:last-child{border-right:none}
+.spec.tier-2{background:#fbf6ea}
+.spec.tier-3{background:linear-gradient(to bottom right, #f9efd3, #fff)}
+
+.spec-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:.06em;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+
+.spec.tier-3 .spec-name{color:var(--rust)}
+
+.spec-desc{
+  font-size:13px;
+  color:var(--slate);
+  line-height:1.5;
+}
+
+.spec-stars{
+  display:flex;
+  gap:3px;
+  margin-bottom:10px;
+}
+
+.spec-stars span{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--gold);
+}
+
+.spec-stars span.empty{background:rgba(200,160,78,.2)}
+
+/* ---------- SECTION — INNOVATIONS ---------- */
+.innovations{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.innov{
+  padding:22px 18px;
+  background:#fff;
+  border:1px solid var(--line);
+  position:relative;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.innov:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(31,58,95,.1);
+}
+
+.innov-num{
+  position:absolute;
+  top:14px;right:16px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;
+  font-style:italic;
+  color:var(--gold);
+}
+
+.innov-icon{
+  width:42px;height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--navy);
+  color:var(--gold-light);
+  border-radius:50%;
+  margin-bottom:14px;
+}
+
+.innov-icon svg{width:20px;height:20px}
+
+.innov-name{
+  font-size:14px;
+  font-weight:600;
+  color:var(--navy);
+  margin-bottom:6px;
+  letter-spacing:.01em;
+}
+
+.innov-desc{
+  font-size:12.5px;
+  color:var(--slate);
+  line-height:1.5;
+}
+
+/* ---------- SECTION — HOUSES ---------- */
+.houses-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+
+.house-feature{
+  background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  color:#fff;
+  padding:36px 32px;
+  position:relative;
+  overflow:hidden;
+}
+
+.house-feature::after{
+  content:'';
+  position:absolute;
+  bottom:-50px;right:-50px;
+  width:180px;height:180px;
+  border:1px solid rgba(200,160,78,.2);
+  border-radius:50%;
+}
+
+.house-feature .label{
+  font-size:10px;letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold-light);
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.house-feature .name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  font-weight:600;
+  margin-bottom:14px;
+  line-height:1.05;
+}
+
+.house-feature .stats{
+  display:flex;gap:24px;
+  padding-top:18px;
+  border-top:1px solid rgba(200,160,78,.3);
+}
+
+.house-feature .stat-label{
+  font-size:10px;letter-spacing:.2em;
+  color:var(--gold-light);
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+.house-feature .stat-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:600;
+}
+
+.house-list{
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+.house-list-head{
+  padding:14px 22px;
+  background:var(--cream);
+  font-size:11px;letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:600;
+  border-bottom:1px solid var(--line);
+}
+
+.house-list ul{list-style:none}
+
+.house-list li{
+  padding:12px 22px;
+  border-bottom:1px dashed var(--line);
+  font-size:14px;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.house-list li::before{
+  content:'';
+  width:5px;height:5px;
+  border-radius:50%;
+  background:var(--gold);
+}
+
+.house-list li:last-child{border-bottom:none}
+.house-list li.more{
+  font-style:italic;
+  color:var(--mute);
+  font-size:13px;
+}
+
+/* ---------- SECTION — TARGET ---------- */
+.target-card{
+  background:linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+  border:1px solid var(--line);
+  padding:36px 40px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:36px;
+  align-items:center;
+}
+
+.target-icon-big{
+  width:90px;height:90px;
+  background:var(--gold);
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.target-icon-big svg{width:42px;height:42px}
+
+.target-text h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  color:var(--navy);
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.target-text p{
+  font-size:15px;
+  color:var(--slate);
+  line-height:1.65;
+}
+
+.target-text strong{color:var(--navy);font-weight:600}
+
+/* ---------- ELEVATOR PITCH ---------- */
+.pitch{
+  margin-top:8px;
+  padding:46px 60px;
+  background:
+    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  color:#fff;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.pitch::before,.pitch::after{
+  content:'"';
+  font-family:'Cormorant Garamond',serif;
+  font-size:140px;
+  position:absolute;
+  color:rgba(200,160,78,.18);
+  line-height:1;
+  font-weight:600;
+}
+
+.pitch::before{top:10px;left:40px}
+.pitch::after{bottom:-30px;right:40px;transform:rotate(180deg)}
+
+.pitch-label{
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold-light);
+  font-weight:500;
+  margin-bottom:18px;
+  position:relative;
+  z-index:2;
+}
+
+.pitch-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  font-style:italic;
+  font-weight:400;
+  line-height:1.4;
+  max-width:880px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+.pitch-text .highlight{
+  color:var(--gold-light);
+  font-weight:600;
+  font-style:normal;
+}
+
+/* ---------- FOOTER ---------- */
+.footer{
+  padding:24px 60px;
+  background:var(--navy-deep);
+  color:rgba(245,241,232,.6);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:500;
+}
+
+.footer-mark{
+  display:flex;align-items:center;gap:10px;
+}
+
+.footer-mark::before{
+  content:'';width:24px;height:1px;background:var(--gold);
+}
+
+/* responsive */
+@media(max-width:900px){
+  .hero{padding:36px 28px}
+  .hero h1{font-size:48px}
+  .section{padding:36px 28px}
+  .section-num{font-size:42px}
+  .section-title{font-size:26px}
+  .identity-grid,.pricing,.houses-grid{grid-template-columns:1fr;gap:24px}
+  .services{grid-template-columns:1fr 1fr}
+  .service:nth-child(3n){border-right:1px solid var(--line)}
+  .service:nth-child(2n){border-right:none}
+  .innovations{grid-template-columns:1fr 1fr}
+  .spec-ladder{grid-template-columns:1fr}
+  .spec{border-right:none;border-bottom:1px solid var(--line)}
+  .target-card{grid-template-columns:1fr;text-align:center}
+  .target-icon-big{margin:0 auto}
+  .pitch{padding:36px 28px}
+  .pitch-text{font-size:20px}
+  .footer{padding:20px 28px;flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="hero-tag">บริษัทรับสร้างบ้าน · ฉบับสรุปสำหรับทีม SEO</div>
+    <h1>Grit <span class="accent">Build.</span></h1>
+    <p class="hero-sub">บริษัทรับสร้างบ้านพรีเมียมแบบครบวงจร (One Stop Service) สำหรับกรุงเทพมหานครและปริมณฑล โดยทีมวิศวกรและสถาปนิกมืออาชีพ ดูแลตั้งแต่ขั้นตอนแรกจนส่งมอบบ้าน</p>
+
+    <div class="hero-meta">
+      <div class="item">
+        <span class="label">Company</span>
+        <span class="value">บริษัท กริท บิลด์ จำกัด</span>
+      </div>
+      <div class="item">
+        <span class="label">Service Area</span>
+        <span class="value">กรุงเทพฯ และปริมณฑล</span>
+      </div>
+      <div class="item">
+        <span class="label">Membership</span>
+        <span class="value">สมาชิก HBA</span>
+      </div>
+      <div class="item">
+        <span class="label">Warranty</span>
+        <span class="value">โครงสร้างสูงสุด 20 ปี</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== SECTION 1 — IDENTITY ========== -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">Business Identity</div>
+        <h2 class="section-title">นิยามธุรกิจ &amp; จุดยืน</h2>
+      </div>
+    </div>
+
+    <div class="identity-grid">
+      <div class="identity-block">
+        <div class="kv">
+          <div class="kv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-8h6v8"/></svg>
+          </div>
+          <div class="kv-content">
+            <div class="kv-label">ประเภทธุรกิจ</div>
+            <div class="kv-value"><strong>รับสร้างบ้านครบวงจร</strong> (One Stop Service)</div>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="kv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2C7.6 2 4 5.6 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.4-3.6-8-8-8z"/></svg>
+          </div>
+          <div class="kv-content">
+            <div class="kv-label">พื้นที่ให้บริการ</div>
+            <div class="kv-value">กรุงเทพมหานคร และปริมณฑล</div>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="kv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4-9 4-9-4 9-4zM3 10l9 4 9-4M3 16l9 4 9-4"/></svg>
+          </div>
+          <div class="kv-content">
+            <div class="kv-label">โมเดลบริการ</div>
+            <div class="kv-value">เลือกได้จาก <strong>แบบบ้าน 100+ แบบ</strong> หรือออกแบบใหม่ตามต้องการ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="identity-block">
+        <div class="kv">
+          <div class="kv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H2a2 2 0 110-4h.09A1.65 1.65 0 004.6 8a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V2a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H22a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </div>
+          <div class="kv-content">
+            <div class="kv-label">ทีมงาน</div>
+            <div class="kv-value">วิศวกรและสถาปนิก<strong>มืออาชีพประจำ</strong> ดูแลทุกขั้นตอน</div>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="kv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <div class="kv-content">
+            <div class="kv-label">การรับรอง</div>
+            <div class="kv-value">สมาชิก<strong>สมาคมธุรกิจรับสร้างบ้าน (HBA)</strong></div>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="kv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="kv-content">
+            <div class="kv-label">การรับประกัน</div>
+            <div class="kv-value">รับประกันโครงสร้าง<strong>สูงสุด 20 ปี</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 2 — PRICING ========== -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">Pricing &amp; Spec Tiers</div>
+        <h2 class="section-title">ราคา &amp; ระดับสเปก</h2>
+      </div>
+    </div>
+
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price-region">ราคาเริ่มต้น · กรุงเทพฯ</div>
+        <div class="price-amount">4<span class="unit">ล้านบาท</span></div>
+        <div class="price-note">สำหรับบ้านในเขตกรุงเทพมหานคร</div>
+      </div>
+      <div class="price-card">
+        <div class="price-region">ราคาเริ่มต้น · จังหวัดใกล้เคียง</div>
+        <div class="price-amount">6<span class="unit">ล้านบาท</span></div>
+        <div class="price-note">สำหรับบ้านในจังหวัดปริมณฑล</div>
+      </div>
+    </div>
+
+    <div class="spec-ladder">
+      <div class="spec tier-1">
+        <div class="spec-stars"><span></span><span class="empty"></span><span class="empty"></span></div>
+        <div class="spec-name">SUPERIOR</div>
+        <div class="spec-desc">วัสดุมาตรฐานเริ่มต้น เหมาะกับลูกค้าที่เริ่มต้นงบ 4 ล้าน+</div>
+      </div>
+      <div class="spec tier-2">
+        <div class="spec-stars"><span></span><span></span><span class="empty"></span></div>
+        <div class="spec-name">PRIME</div>
+        <div class="spec-desc">วัสดุพรีเมียม ฟังก์ชันครบ คุ้มค่าสำหรับงบกลาง</div>
+      </div>
+      <div class="spec tier-3">
+        <div class="spec-stars"><span></span><span></span><span></span></div>
+        <div class="spec-name">PRESTIGE</div>
+        <div class="spec-desc">วัสดุระดับสูงสุด พร้อมรับประกันโครงสร้าง 20 ปี</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 3 — SERVICES ========== -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">03</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">One Stop Service</div>
+        <h2 class="section-title">บริการครบวงจร 6 ขั้นตอน</h2>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="service">
+        <div class="service-step">i.</div>
+        <div class="service-title">ให้คำปรึกษา <em style="color:var(--gold);font-style:normal">ฟรี</em></div>
+        <div class="service-desc">ปรึกษาเรื่องแบบบ้าน งบประมาณ โดยไม่มีค่าใช้จ่าย</div>
+      </div>
+      <div class="service">
+        <div class="service-step">ii.</div>
+        <div class="service-title">ออกแบบ &amp; ประเมินราคา</div>
+        <div class="service-desc">สถาปนิกออกแบบตามความต้องการ ควบคุมงบไม่บานปลาย</div>
+      </div>
+      <div class="service">
+        <div class="service-step">iii.</div>
+        <div class="service-title">จัดการเอกสาร</div>
+        <div class="service-desc">ยื่นขออนุญาตก่อสร้าง ขอน้ำประปา/ไฟฟ้าชั่วคราว</div>
+      </div>
+      <div class="service">
+        <div class="service-step">iv.</div>
+        <div class="service-title">แนะนำสินเชื่อ</div>
+        <div class="service-desc">ประสานกับ SCB, KBANK, UOB, BBL, KTB, GH Bank — รับวงเงิน 100%</div>
+      </div>
+      <div class="service">
+        <div class="service-step">v.</div>
+        <div class="service-title">ก่อสร้าง &amp; QC</div>
+        <div class="service-desc">วิศวกรคุมงานทุกขั้นตอน พร้อม QC Double Check</div>
+      </div>
+      <div class="service">
+        <div class="service-step">vi.</div>
+        <div class="service-title">บริการหลังการขาย</div>
+        <div class="service-desc">After Sales Service + รับประกันโครงสร้างสูงสุด 20 ปี</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 4 — INNOVATIONS ========== -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">04</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">8 Signature Innovations</div>
+        <h2 class="section-title">นวัตกรรมเฉพาะที่แตกต่างจากคู่แข่ง</h2>
+      </div>
+    </div>
+
+    <div class="innovations">
+      <div class="innov">
+        <div class="innov-num">i</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13"/></svg>
+        </div>
+        <div class="innov-name">Solid Structure</div>
+        <div class="innov-desc">โครงสร้างมั่นคง แข็งแรง รับประกันยาว</div>
+      </div>
+      <div class="innov">
+        <div class="innov-num">ii</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+        <div class="innov-name">Active Air Quality</div>
+        <div class="innov-desc">ระบบกรองอากาศ ปลอดฝุ่น PM 2.5</div>
+      </div>
+      <div class="innov">
+        <div class="innov-num">iii</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.6 4.6A2 2 0 1111 8H2M12.6 19.4A2 2 0 1014 16H2M17.5 8a2.5 2.5 0 113.5 3.5H2"/></svg>
+        </div>
+        <div class="innov-name">Active Air Flow</div>
+        <div class="innov-desc">ออกแบบทางลม ทำให้บ้านเย็น ประหยัดแอร์</div>
+      </div>
+      <div class="innov">
+        <div class="innov-num">iv</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <div class="innov-name">Solar Roof</div>
+        <div class="innov-desc">หลังคาโซลาร์ ผลิตไฟเอง ลดค่าไฟ</div>
+      </div>
+      <div class="innov">
+        <div class="innov-num">v</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+        </div>
+        <div class="innov-name">Comfort Living</div>
+        <div class="innov-desc">ออกแบบเพื่อความสะดวกสบายในชีวิตประจำวัน</div>
+      </div>
+      <div class="innov">
+        <div class="innov-num">vi</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg>
+        </div>
+        <div class="innov-name">Senior Housing</div>
+        <div class="innov-desc">บ้านสำหรับผู้สูงอายุ ปลอดภัย ใช้งานง่าย</div>
+      </div>
+      <div class="innov">
+        <div class="innov-num">vii</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 015 5v3.5a3.5 3.5 0 01-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 015.5 10z"/></svg>
+        </div>
+        <div class="innov-name">Pet Friendly</div>
+        <div class="innov-desc">ออกแบบให้เป็นมิตรกับสัตว์เลี้ยง</div>
+      </div>
+      <div class="innov">
+        <div class="innov-num">viii</div>
+        <div class="innov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg>
+        </div>
+        <div class="innov-name">Pest-Free Living</div>
+        <div class="innov-desc">ระบบป้องกันสัตว์รบกวน ปลวก งู ฯลฯ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 5 — HOUSES ========== -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">05</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">House Catalogue</div>
+        <h2 class="section-title">แบบบ้านในแคตตาล็อก</h2>
+      </div>
+    </div>
+
+    <div class="houses-grid">
+      <div class="house-feature">
+        <div class="label">Featured Design · Entry Tier</div>
+        <div class="name">Grand <em style="font-style:italic;color:var(--gold-light)">Horizon</em></div>
+        <div class="stats">
+          <div>
+            <div class="stat-label">ขนาด</div>
+            <div class="stat-val">209 ตร.ม.</div>
+          </div>
+          <div>
+            <div class="stat-label">เริ่มต้น</div>
+            <div class="stat-val">4.52M฿</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="house-list">
+        <div class="house-list-head">Premium Range</div>
+        <ul>
+          <li>Jenista — 684 ตร.ม. · 16.63M฿</li>
+          <li>Dante</li>
+          <li>Mono Haus</li>
+          <li>Noah</li>
+        </ul>
+      </div>
+
+      <div class="house-list">
+        <div class="house-list-head">More Designs</div>
+        <ul>
+          <li>Vara</li>
+          <li>Muse</li>
+          <li>Keen</li>
+          <li class="more">+ อีกกว่า 90 แบบให้เลือก</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 6 — TARGET ========== -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-num">06</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">Target Customer</div>
+        <h2 class="section-title">กลุ่มลูกค้าเป้าหมาย</h2>
+      </div>
+    </div>
+
+    <div class="target-card">
+      <div class="target-icon-big">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2M16 3.13a4 4 0 010 7.75M22 21v-2a4 4 0 00-3-3.85"/></svg>
+      </div>
+      <div class="target-text">
+        <h3>เจ้าของที่ดินที่ต้องการสร้างบ้านพรีเมียม</h3>
+        <p>คนที่มี<strong>ที่ดินในกรุงเทพฯ/ปริมณฑล</strong>และต้องการสร้างบ้านใหม่ ทั้งกลุ่มที่มีงบ<strong>ปานกลาง-สูง (4–20+ ล้านบาท)</strong> ต้องการความมั่นใจในคุณภาพและความโปร่งใสของผู้รับเหมา</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ELEVATOR PITCH ========== -->
+  <div class="pitch">
+    <div class="pitch-label">Elevator Pitch</div>
+    <p class="pitch-text">
+      Grit Build คือ <span class="highlight">บริษัทรับสร้างบ้านพรีเมียม</span> สำหรับกรุงเทพฯ และปริมณฑล เน้น<span class="highlight">บริการครบวงจร โปร่งใส</span> มีวิศวกรและสถาปนิกประจำ พร้อม<span class="highlight">รับประกันโครงสร้างสูงสุด 20 ปี</span>
+    </p>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-mark">Grit Build · Business One-Pager</div>
+    <div>SEO Planning Document</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
